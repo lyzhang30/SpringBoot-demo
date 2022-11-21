@@ -38,7 +38,7 @@ public class SwaggerConfig {
      * @return ApiInfo
      */
     private ApiInfo apiInfo(){
-        Contact contact = new Contact("张连勇","https://blog.csdn.net/zly03?spm=1000.2115.3001.5343","lyzhang@163.com");
+        Contact contact = new Contact("zhanglianyong","https://blog.csdn.net/zly03?spm=1000.2115.3001.5343","lyzhang@163.com");
         return new ApiInfoBuilder()
                 .title("demo")
                 .version("1.0.0")
