@@ -1,0 +1,24 @@
+server:
+  port: 9527  # 运行端口
+
+spring:
+  application:
+    name: HelloWorld
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3310/orm?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: 123456
+      maxActive: 100
+      initialSize: 10
+
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
+  type-aliases-package: com.dy.demo.entity
+  configuration:
+    map-underscore-to-camel-case: true

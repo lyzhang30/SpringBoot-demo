@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dy.demo.mapper.StudentMapper">
+
+    <resultMap id="BaseMap" type="com.dy.demo.entity.Student">
+        <id column="sid" jdbcType="BIGINT" property="sid"/>
+        <result column="s_name" jdbcType="VARCHAR" property="sName"/>
+        <result column="sex" jdbcType="VARCHAR" property="sex"/>
+        <result column="age" jdbcType="INTEGER" property="age"/>
+    </resultMap>
+
+    <select id="getStudentById" resultMap="BaseMap">
+        SELECT
+            sid,
+            s_name,
+            age,
+            sex
+        FROM
+            `student`
+        WHERE
+            sid = #{sid}
+    </select>
+
+    <update id="updateById">
+        UPDATE student
+        SET s_name = #{sName},
+            age = #{age},
+            sex = #{sex}
+        WHERE
+            sid = #{sid}
+    </update>
+</mapper>
